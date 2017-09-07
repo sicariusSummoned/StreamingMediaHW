@@ -52,10 +52,11 @@ const loadFile = (request, response, filePath, fileType) => {
   fs.stat(file, (err, stats) => {
     checkError();
 
-    const positions = getPositions();
+    const positions = getPositions(request);
     const total = stats.size;
     let start = parseInt(positions[0], 10);
     const end = positions[1] ? parseInt(positions[1], 10) : total - 1;
+
     if (start > end) {
       start = end - 1;
     }
