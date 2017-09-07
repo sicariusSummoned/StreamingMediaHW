@@ -1,9 +1,9 @@
 {
   "name": "streamingmediahw",
   "version": "1.0.0",
-  "engines":{
-      "node": "8.4.0",
-      "npm":"5.3.0"
+  "engines": {
+    "node": "8.4.0",
+    "npm": "5.3.0"
   },
   "description": "My HW for 430 and 590",
   "main": "./src/server.js",
