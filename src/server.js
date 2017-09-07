@@ -8,7 +8,7 @@ const onRequest = (request, response) => {
   console.dir(request.url);
 
   switch (request.url) {
-    case '/'||'/index':
+    case '/' || '/index':
       htmlHandler.getIndex(request, response);
       break;
     case '/page2':

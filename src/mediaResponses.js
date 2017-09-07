@@ -15,8 +15,7 @@ const loadFile = (request, response, filePath, fileType) => {
 
     const range = request.headers.range;
 
-    
-      
+
     if (!range) {
       return response.writeHead(416);
     }
@@ -34,8 +33,7 @@ const loadFile = (request, response, filePath, fileType) => {
 
     const chunksize = (end - start) + 1;
 
-    
-      
+
     response.writeHead(206, {
       'Content-Range': `bytes ${start}-${end}/${total}`,
       'Accept-Ranges': 'bytes',
@@ -62,18 +60,11 @@ const loadFile = (request, response, filePath, fileType) => {
 };
 
 
-const getParty = (request, response) => {
-  loadFile(request, response, '../client/party.mp4', 'video/mp4');
-};
+const getParty = (request, response) => { loadFile(request, response, '../client/party.mp4', 'video/mp4'); };
 
+const getBling = (request, response) => { loadFile(request, response, '../client/bling.mp3', 'audio/mpeg'); };
 
-const getBling = (request, response) => {
-  loadFile(request, response, '../client/bling.mp3', 'audio/mpeg');
-};
-
-const getBird = (request, response) => {
-  loadFile(request, response, '../client/bird.mp4', 'video/mp4');
-};
+const getBird = (request, response) => { loadFile(request, response, '../client/bird.mp4', 'video/mp4'); };
 
 module.exports.getParty = getParty;
 module.exports.getBling = getBling;
